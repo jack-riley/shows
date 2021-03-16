@@ -1,0 +1,155 @@
+.wrapper{
+    width: 950px;
+    min-height: 200px;
+    margin: auto;
+}
+
+h1{
+    text-align: center;
+}
+
+.list{
+    min-width: 100px;
+    min-height: 100px;
+    padding: 5px 10px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 30px;
+
+
+
+    
+}
+.column{
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+
+}
+#id{
+    width: 50px;
+    display: inline-block;
+}
+
+.column h3{
+    text-align: left;
+    background-color: lightgray;
+    margin-right: -5px;
+    margin-left: -5px;
+    padding: 0px 5px;
+    border-style: solid;
+
+
+
+}
+.column ul{
+    text-align: left;
+    background-color:lightgray;
+    text-decoration: none;
+    padding: 0px;
+    margin-top: -20px;
+    margin-right: -5px;
+    margin-left: -5px;
+    border-style: solid;
+
+}
+.column li{
+    list-style-type: none;
+    background-color: lightgray;
+    padding-left: 5px;
+}
+.column li:nth-child(odd){
+    background-color: white;
+}
+
+#action{
+    width: 200px;
+    display: inline-block;
+    text-align: center;
+
+}
+.edit ul{
+    display: inline-block;
+    width: 180px;
+    text-align: center;
+    margin: 5px;
+}
+
+.edit li a{
+    margin: 0px 7px 0px 0px;
+}
+
+#create{
+    margin:10px 420px;
+    background-color: darkgray;
+    border-radius: 15%;
+    border-bottom: solid 3px black;
+    border-right: solid 3px black;
+    width: 100px;
+}
+
+.add{
+    width: 500px;
+    min-height: 30px;
+    margin: 10px 300px;
+    padding: 5px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+
+}
+
+#head{
+    text-align: left;
+    margin: 0px 85px;
+}
+.add p{
+    width: 200px;
+
+}
+.add #desc{
+    width: 300px;
+}
+
+.add #name{
+    width: 300px;
+}
+
+.add #desc{
+    vertical-align: top;
+    display: inline-block;
+    margin-top: -3px;
+}
+.add textarea{
+    display: inline-block;
+}
+
+.add button{
+    display: block;
+    margin: 5px 140px;
+}
+
+.back{
+    position: absolute;
+    top: 10px;
+    right: 200px;
+}
+#add_show{
+    text-align: left;
+    margin: 0px 75px;
+}
+
+#show_head{
+    text-align: left;
+    margin: 20px 20px;
+}
+
+#show{
+    margin: 10px 20px;
+    
+}
+
+#go{
+    text-align: center;
+    margin: 130px;
+}

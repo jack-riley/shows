@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Shows</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class = "wrapper">
+        <h1>All Shows</h1>
+        <div class = "list">
+            <div class = "column" id = "id">
+                <h3>ID</h3>
+                <ul>
+                    {% for show in show_list %}
+                        <li><a href="/shows/{{show.id}}">{{show.id}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>   
+            <div class = "column">     
+                <h3>Title</h3>
+                <ul>
+                    {% for show in show_list %}
+                        <li>{{ show.title }} </li>
+                    {% endfor %}
+                </ul>
+            </div>   
+            <div class = "column">
+                <h3>Network</h3>
+                <ul>
+                    {% for show in show_list %}
+                        <li>{{ show.network.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>   
+            <div class = "column">
+                <h3>Release Date</h3>
+                <ul>
+                    {% for show in show_list %}
+                        <li id="release">{{ show.release_date }}</li>
+                    {% endfor %}
+                </ul>
+            </div>   
+
+            <div class = "column" id ="action">
+                <h3>Actions</h3>
+                <ul class="edit">
+                    {% for show in show_list %}
+                        <li class="edit">
+                            <a href="/shows/{{show.id}}">Show</a>
+                            <a href="/{{show.id}}/edit">Edit</a>
+                            <a href="/{{show.id}}/delete">Delete</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div> 
+
+            
+            
+        </div>
+        <a href="/shows/new"><button id= "create">Create a New Show</button></a>
+    </div>
+    
+</body>
+</html>
