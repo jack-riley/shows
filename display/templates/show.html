@@ -12,6 +12,13 @@
             <a href="/shows">Go Back</a>
         </div>
         <h1 id  ="show_head"> TV show {{this_show.id}}</h1>
+        {% if messages %}
+        <ul class="messages">    
+            {% for message in messages %}    
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+            {% endfor %}
+        </ul>
+        {% endif %}
         <div id ="show">
             
             <p>Title: {{this_show.title}}</p>
@@ -23,7 +30,7 @@
 
         <p>Last Updated : {{this_show.updated_at}}</p>
 
-        <p><a href="/{{this_show.id}}/edit">Edit</a> | <a href="/{{this_show.id}}/delete">Delete</a></p>
+        <p><a href="/edit/{{this_show.id}}">Edit</a> | <a href="/{{this_show.id}}/delete">Delete</a></p>
 
     </div>
 

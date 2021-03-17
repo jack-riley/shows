@@ -15,12 +15,21 @@
             <h1 id="head">
                 Edit Show
             </h1>
-            <form action="/shows/{{current_show.id}}" method="post">
+            {% if messages %}
+            <ul class="messages">    
+                {% for message in messages %}    
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <form action="/{{current_show.id}}/process_edit" method="post">
                 {% csrf_token %}
                 <p>Title <input id ="name"  name="title" type="text" value="{{current_show.title}}"></p>
                 <p>Network <input id ="name"  name="network" type="text" value="{{current_show.network.name}}"></p>
                 <p>Release Date <input id ="name"  name="release_date" type="date" value="{{current_show.release_date|date:"Y-m-d" }}"></p>
                 <p id = "desc" >Notes:</p> <textarea name="desc" cols="37" rows="10" type = "text">{{current_show.desc}}</textarea>
+                <input type="hidden" name="new" value="edit">
+
                 <button type="submit">Save</button>
             </form>
             <a href="/shows/{{current_show.id}}" id="go">Go to Show</a>

@@ -15,12 +15,20 @@
             <h1 id="add_show">
                 Add a Show
             </h1>
+            {% if messages %}
+                <ul class="messages">    
+                    {% for message in messages %}    
+                        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                    {% endfor %}
+                </ul>
+                {% endif %}
             <form action="/process_new_show" method="post">
                 {% csrf_token %}
                 <p>Title <input id ="name"  name="title" type="text"></p>
                 <p>Netowrk <input id ="name"  name="network" type="text"></p>
                 <p>Release Date <input id ="name"  name="release_date" type="date"></p>
                 <p id = "desc" >Notes:</p> <textarea name="desc" cols="37" rows="10" type = "text"></textarea>
+                <input type="hidden" name="new" value="new">
                 <button type="submit">Add</button>
             </form>
 
